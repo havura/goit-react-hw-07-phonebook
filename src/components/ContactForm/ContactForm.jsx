@@ -2,7 +2,7 @@ import { nanoid } from 'nanoid';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import css from '../ContactForm/ContactForm.module.css';
-import { addContact } from 'redux/contactsSlice';
+import { addContact } from 'redux/operationContacts';
 import { useDispatch, useSelector } from 'react-redux';
 
 let schema = yup.object().shape({
@@ -29,7 +29,7 @@ export const ContactForm = () => {
   };
 
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(state => state.contacts.contacts.items);
 
   const handleSubmitForm = (values, { resetForm }) => {
     const newContact = {

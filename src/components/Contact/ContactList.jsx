@@ -5,12 +5,12 @@ import { ContactItem } from './ContactItem';
 export const ContactList = ({ contacts }) => {
   return (
     <ul className={css.wrapper}>
-      {contacts.map(({ id, name, number }) => {
+      {contacts.map(({ id, name, phone }) => {
         return (
           <ContactItem
             key={id}
             name={name}
-            number={number}
+            number={phone}
             id={id}
           />
         );
@@ -24,7 +24,7 @@ ContactList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
+      phone: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
 

@@ -5,7 +5,7 @@ import { setFilter } from 'redux/filterSlice';
 
 export const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(state => state.filter.status);
+  const filter = useSelector(state => state.filter.filter);
 
     return (
       <label className={css.label}>
